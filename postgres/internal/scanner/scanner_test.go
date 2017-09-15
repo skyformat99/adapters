@@ -155,7 +155,7 @@ func TestPrestScan(t *testing.T) {
 		len     int
 	}{
 		{"scan error", &bytes.Buffer{}, errors.New("test error"), tmap, errPtr, true, 0},
-		{"scan err length", bytes.NewBuffer(byts), nil, &ComplexType{}, errLength, true, 0},
+		{"scan err length", bytes.NewBuffer(byts), nil, &ComplexType{}, errLength, true, 2},
 		{"scan not slice", bytes.NewBuffer(byt), nil, &ComplexType{}, nil, true, 1},
 		{"scan slice", bytes.NewBuffer(byt), nil, &act, nil, true, 1},
 		{"scan using map", bytes.NewBuffer(byt), nil, &tmap, nil, true, 1},
